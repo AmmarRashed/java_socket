@@ -1,0 +1,21 @@
+public class Customer{
+  String name;
+  Restaurant restaurant;
+  public Customer(Restaurant restaurant, String name){
+    this.restaurant = restaurant;
+    this.name = name;
+  }
+  public void order(int i){
+    String order = this.restaurant.meals[i];
+    System.out.println("Customer "+this+" has ordered "+order+" .");
+    this.restaurant.waiter.takeOrder(order, this);
+  }
+  public void getServed(String order){
+    System.out.println("Customer "+this+" has been served "+order+" .");
+  }
+  
+  @Override
+  public String toString(){
+    return this.name;
+  }
+}
